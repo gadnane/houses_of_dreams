@@ -1,13 +1,19 @@
 <% provide(:title, @user.username) %>
-<div class="row">
-        <%= @user.username %>
-        </br>
-        <%= @user.email %>
-        </br>
-        <%= @user.firstname %>
-        </br>
-        <%= @user.lastname %>
-        </br>
-        <%= @user.maxrent %>
-        </br>
-</div>
+<p>
+User Name: <%= @user.username %>
+</p>
+
+<p>
+Email: <%= @user.email %>
+</p>
+<p>
+First Name: <%= @user.firstname %>
+</p>
+
+<p>
+Last Name: <%= @user.lastname %>
+ </p>
+
+<p>
+Max Rent: <%= @user.maxrent %>
+</p>
