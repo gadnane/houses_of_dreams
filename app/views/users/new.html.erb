@@ -1,2 +1,33 @@
 <% provide(:title, 'Create Account') %>
 <h1>Create Account</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+    
+      <%= f.label :username, 'User Name' %>
+      <%= f.text_field :username, class: 'form-control' %>
+
+      <%= f.label :password, 'Password' %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.label :email, 'Emal Address' %>
+      <%= f.text_field :email, class: 'form-control' %>
+
+       <%= f.label :firstname,  'First Name' %>
+      <%= f.text_field :firstname, class: 'form-control' %>
+
+       <%= f.label :lastname, 'Last Name' %>
+      <%= f.text_field :lastname, class: 'form-control' %>
+
+      <%= f.label :maxrent, 'Maximum Rent' %>
+      <%= f.text_field :maxrent, class: 'form-control' %>
+
+      <%= f.submit "Create Account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
