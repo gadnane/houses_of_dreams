@@ -1,13 +1,11 @@
-<% provide(:title, "Home") %>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= yield(:title) %> | Houses of Dreams</title>
-  </head>
-  <body>
-    <h1>Houses of Dreams</h1>
-    <p>
-      Home page
-    </p>
-  </body>
-</html>
+<div class="center jumbotron">
+  <h1>Welcome to Houses of Dreams</h1>
+
+  <h2>
+    Home Page
+  </h2>
+
+  <%= link_to "Sign in now", '#', class: "btn btn-lg btn-primary" %>
+</br></br>
+  <%= link_to "Sign up users", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
