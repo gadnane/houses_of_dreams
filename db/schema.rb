@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125143030) do
+ActiveRecord::Schema.define(version: 20141125234412) do
 
   create_table "users", force: true do |t|
     t.string   "username"
@@ -19,9 +19,12 @@ ActiveRecord::Schema.define(version: 20141125143030) do
     t.string   "firstname"
     t.string   "lastname"
     t.decimal  "maxrent"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "password_digest"
+    t.boolean  "agent",           default: false
+    t.boolean  "owner",           default: false
+    t.boolean  "customer",        default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

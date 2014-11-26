@@ -4,8 +4,8 @@
   <h2>
     Home Page
   </h2>
-
-  <%= link_to "Log into Account", login_path, class: "btn btn-lg btn-primary" %>
 </br></br>
+<% if logged_in? && current_user.agent? %>
   <%= link_to "Create Account", signup_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>

@@ -6,28 +6,39 @@
     <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
     
-      <%= f.label :username, 'User Name' %>
+      <%= f.label :username, 'User Name:' %>
       <%= f.text_field :username, class: 'form-control' %>
 
-      <%= f.label :password, 'Password' %>
+      <%= f.label :password, 'Password:' %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "Confirmation:" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.label :email, 'Emal Address' %>
+      <%= f.label :email, 'Emal Address:' %>
       <%= f.text_field :email, class: 'form-control' %>
 
-       <%= f.label :firstname,  'First Name' %>
+       <%= f.label :firstname,  'First Name:' %>
       <%= f.text_field :firstname, class: 'form-control' %>
 
-       <%= f.label :lastname, 'Last Name' %>
+       <%= f.label :lastname, 'Last Name:' %>
       <%= f.text_field :lastname, class: 'form-control' %>
 
-      <%= f.label :maxrent, 'Maximum Rent' %>
+      <%= f.label :maxrent, 'Maximum Rent:' %>
       <%= f.text_field :maxrent, class: 'form-control' %>
 
+      <p>Please chose one of following three:</p>
+      <%= label :agent, "Agent:" %>
+      <%= f.check_box :agent %>
+
+       <%= label :owner, "Owner:" %>
+        <%= f.check_box :owner %>
+
+       <%= label :customer, "Customer:" %>
+        <%= f.check_box :customer %>
+    <p></p>
       <%= f.submit "Create Account", class: "btn btn-primary" %>
+      </p>
     <% end %>
   </div>
 </div>
