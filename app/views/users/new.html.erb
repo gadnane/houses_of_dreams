@@ -4,8 +4,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
-    <%= render 'shared/error_messages' %>
-    
+     <%= render 'shared/error_messages', object: f.object %>    
       <%= f.label :username, 'User Name:' %>
       <%= f.text_field :username, class: 'form-control' %>
 
@@ -28,8 +27,6 @@
       <%= f.text_field :maxrent, class: 'form-control' %>
 
       <p>Please chose one of following three:</p>
-      <%= label :agent, "Agent:" %>
-      <%= f.check_box :agent %>
 
        <%= label :owner, "Owner:" %>
         <%= f.check_box :owner %>
@@ -38,7 +35,7 @@
         <%= f.check_box :customer %>
     <p></p>
       <%= f.submit "Create Account", class: "btn btn-primary" %>
-      </p>
+      <p></br></p>
     <% end %>
   </div>
 </div>

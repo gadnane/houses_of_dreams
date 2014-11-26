@@ -38,3 +38,22 @@ User.create!(username:  "gadnane2",
              agent: false,
              owner: false,
              customer: true)
+
+
+# users = User.order(:created_at).take(6)
+# 50.times do
+#   property_type = "House"
+#   address = "123 Fake Street"
+#   location = "Downtown"
+#   bedroom = "3"
+#   bathroom= "2"
+#   other = "1"
+#   rent = "900"
+#   users.each { |user| user.properties.create!(property_type: property_type, address: address, 
+#                                               location: location, bedroom: bedroom, bathroom: bathroom, 
+#                                                 other: other, rent: rent) }
+
+# end
+
+
+

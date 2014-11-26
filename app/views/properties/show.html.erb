@@ -1,0 +1,60 @@
+<% provide(:title, @property.address) %>
+<p>
+Property Type: <%= @property.property_type %>
+</p>
+
+<p>
+Address: <%= @property.address %>
+</p>
+<p>
+Location: <%= @property.location %>
+</p>
+
+<p>
+Bedroom: <%= @property.bedroom %>
+ </p>
+
+<p>
+Bathroom: <%= @property.bathroom %>
+</p>
+
+<p>
+Other Rooms: <%= @property.other %>
+</p>
+
+<p>
+Rent: <%= @property.rent %>
+</p>
+
+<p>
+Posted <%= time_ago_in_words(@property.created_at) %> ago.
+</p>
+
+
+<p>
+Picture 1:  <%= image_tag @property.picture.url, class: " imagestore"  %>
+</p>
+
+
+
+<p>
+Picture 2: <%= image_tag @property.picture2.url, class: " imagestore"%>
+</p>
+
+
+
+<p>
+Picture 3: <%= image_tag @property.picture3.url, class: " imagestore" %>
+</p>
+
+
+
+<p>
+Picture 4: <%= image_tag @property.picture4.url, class: " imagestore" %>
+</p>
+
+
+
+<p>
+Picture 5: <%= image_tag @property.picture5.url, class: " imagestore" %>
+</p>

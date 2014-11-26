@@ -14,18 +14,65 @@ First Name: <%= @user.firstname %>
 Last Name: <%= @user.lastname %>
  </p>
 
+<% if current_user.customer? %>
 <p>
 Max Rent: <%= @user.maxrent %>
 </p>
+<% end %>
+
+<% if current_user.agent? %>
+<p>
+Type of Account: Agent
+</p>
+<% end %>
+
+<% if current_user.owner? %>
+<p>
+Type of Account: Owner
+</p>
+<% end %>
+
+<% if current_user.customer? %>
+<p>
+Type of Account: Customer
+</p>
+<% end %>
 
 <p>
-Agent: <%= @user.agent %>
+<% if current_user.owner? %> 
+<h3>Properties (<%= @user.properties.count %>)</h3>
+   <% if @user.properties.any? %>
+      
+     
+      <ul >
+      <% @user.properties.each do |property| %>
+       	<li>
+      <%= link_to property.address, property %>, added 
+      <%= time_ago_in_words(property.created_at) %> ago. 
+      
+       | <%= link_to "delete Property", property, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+     |<%= link_to 'Update Property', edit_property_path(property) %><br/>   
+     <% end %>
+		</li>
+
+      </ul>
+      
+      <%= will_paginate @properties %>
+
+      <% else %>
+
+    <p>
+    Sorry, you have no properties
+    </p>
+    
+
+ <% end %>
+<% end %>
+
 </p>
 
-<p>
-Owner: <%= @user.owner %>
-</p>
 
-<p>
-Customer: <%= @user.customer %>
-</p>
+
+ 
+                      

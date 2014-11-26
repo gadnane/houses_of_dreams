@@ -18,19 +18,25 @@
         <%= link_to "Houses of Dreams", root_path, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav pull-right">
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Properties", properties_path %></li>
             <% if logged_in? %>
+            <% if current_user.owner?  %>
+            <li><%= link_to "Add Property", new_property_path %></li>
+            <li><%= link_to "View Account & Properties", current_user %></li>
+            <% else %>
             <li><%= link_to "View Account", current_user %></li>
           <% if current_user.agent?  %>
             <li><%= link_to "Create Account", signup_path %></li>
           <% end %>
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Properties",   '#' %></li>
+          <% end %>
+           </li>
+            
             <li>
                 <%= link_to "Log out", logout_path, method: "delete" %>
               </li>
             <% else %>
-            <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Properties",   '#' %></li>
+    
             <li><%= link_to "Log in", login_path %></li>
             <% end %>
           </ul>

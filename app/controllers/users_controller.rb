@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @properties = @user.properties.paginate(page: params[:page])
   end
 
    def create
@@ -26,17 +27,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :email, :firstname, :lastname, :maxrent, :password,
                                    :password_confirmation, :agent, :owner, :customer)
-    end
-
-    def logged_in_user
-      unless logged_in?
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
-
-    def agent_user
-      redirect_to(root_url) unless current_user.agent?
     end
 
 end

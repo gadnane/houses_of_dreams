@@ -1,0 +1,85 @@
+<% provide(:title, "Add Property") %>
+<h1>Add Property</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@property, html: { multipart: true }) do |f| %>
+       <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :property_type, 'Property Type:' %>
+      <%= f.select(:property_type, options_for_select([['House', 'House'],['Apartment','Apartment']])) %>
+
+      <%= f.label :address, 'Address:' %>
+      <%= f.text_field :address, class: 'form-control' %>
+
+     <%= f.label :location, 'Location:' %>
+      <%= f.select(:location, options_for_select([['Orleans', 'Orleans'],['Kanata','Kanata'],['Downtown','Downtown'],['Riverside','Riverside'],['Soutkeys','Soutkeys']])) %>
+
+      <%= f.label :bedroom, 'Number of Bedrooms:' %>
+      <%= f.text_field :bedroom, class: 'form-control' %>
+
+      <%= f.label :bathroom, 'Number of Bathrooms:' %>
+      <%= f.text_field :bathroom, class: 'form-control' %>
+
+      <%= f.label :other, 'Number of Other Rooms:' %>
+      <%= f.text_field :other, class: 'form-control' %>
+
+      <%= f.label :rent, 'Rent:' %>
+      <%= f.text_field :rent, class: 'form-control' %>
+
+      <%= f.label :picture, 'Picture 1:' %>
+       <%= f.file_field :picture %>
+
+      <%= f.label :picture2, 'Picture 2:' %>
+       <%= f.file_field :picture2 %>
+
+      <%= f.label :picture3, 'Picture 3:' %>
+       <%= f.file_field :picture3 %>
+
+      <%= f.label :picture4, 'Picture 4:' %>
+      <%= f.file_field :picture4 %>
+
+      <%= f.label :picture5, 'Picture 5:' %>
+       <%= f.file_field :picture5 %>
+
+      <%= f.submit "Add Property", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<p></br></p>
+<script type="text/javascript">
+  $('#property_picture').bind('change', function() {
+    size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+
+    $('#property_picture2').bind('change', function() {
+    size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+
+      $('#property_picture3').bind('change', function() {
+    size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+
+        $('#property_picture4').bind('change', function() {
+    size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+
+          $('#property_picture5').bind('change', function() {
+    size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
