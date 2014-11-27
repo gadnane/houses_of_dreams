@@ -34,6 +34,10 @@ class Property < ActiveRecord::Base
   validate  :picture4_size
   validate  :picture5_size
 
+  searchable do 
+    text :property_type, :address, :location, :bedroom, :bathroom, :rent 
+  end
+
   private
   def picture_size
     if picture.size > 5.megabytes

@@ -1,11 +1,38 @@
 <div class="center jumbotron">
   <h1>Welcome to Houses of Dreams</h1>
 
-  <h2>
-    Home Page
-  </h2>
-</br></br>
-<% if logged_in? && current_user.agent? %>
-  <%= link_to "Create Account", signup_path, class: "btn btn-lg btn-primary" %>
-  <% end %>
+
 </div>
+<h1>Search For a Property</h1>
+<%= form_tag properties_path, :method => "get" do %>
+	
+	<p>
+		<%= label :search, 'Location:' %>
+		<%= select_tag(:search, options_for_select([['Orleans', 'Orleans'],['Kanata','Kanata'],['Downtown','Downtown'],['Riverside','Riverside'],['Soutkeys','Soutkeys']])) %>
+	</p>
+
+	<p>
+		<%= label :search2, 'Type of property:' %>
+		<%= select_tag(:search2, options_for_select([['House', 'House'],['Apartment','Apartment']])) %>
+	</p>
+	<p>
+		<%= label :search3, 'Number of bedrooms:' %>
+		<%= text_field_tag :search3, params[:search3] %>
+	</p>
+	<p>
+		<%= label :search4, 'Number of bathrooms:' %>
+		<%= text_field_tag :search4, params[:search4] %>
+	</p>
+		<p>
+		<%= label :search5, 'Minimum rent:' %>
+		<%= text_field_tag :search5, params[:search5] %>
+	</p>
+	<p>
+		<%= label :search6, 'Maximum rest:' %>
+		<%= text_field_tag :search6, params[:search6] %>
+
+		<%= submit_tag "Search", :name => nil, class: "btn btn-info" %>
+	</p>
+	<% end %>
+
+<p></br></p>

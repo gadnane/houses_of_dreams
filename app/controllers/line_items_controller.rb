@@ -34,7 +34,7 @@ class LineItemsController < ApplicationController
         flash[:success] =  "Property Successfully Added to Visiting List."
         redirect_to @line_item.visit
       else
-        flash[:danger] = "Property rent is too high, or Property is already in your visiting list."
+        flash[:danger] = "Property rent is too high or Property is already in your visiting list."
         redirect_to property
       end   
 end

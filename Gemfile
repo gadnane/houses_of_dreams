@@ -40,3 +40,5 @@ gem 'bootstrap-will_paginate', '0.0.10'
 # gem 'debugger', group: [:development, :test]
 gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
