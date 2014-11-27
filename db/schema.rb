@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126231805) do
+ActiveRecord::Schema.define(version: 20141127012058) do
+
+  create_table "line_items", force: true do |t|
+    t.integer  "property_id"
+    t.integer  "visit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "line_items", ["property_id"], name: "index_line_items_on_property_id"
+  add_index "line_items", ["visit_id"], name: "index_line_items_on_visit_id"
 
   create_table "properties", force: true do |t|
     t.string   "property_type"
@@ -50,5 +60,10 @@ ActiveRecord::Schema.define(version: 20141126231805) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "visits", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

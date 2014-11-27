@@ -57,7 +57,7 @@ Type of Account: Customer
  <%= form_for(property) do |f| %>
      <%= label :deactivated, "To mark property as deleted, check off the box and press deactivate:" %>
         <%= f.check_box :deactivated %>
-        <%= f.submit "Deactivate Account", class: "btn btn-danger",  data: { confirm: "You sure?" } %>
+        <%= f.submit "Deactivate Property", class: "btn btn-danger",  data: { confirm: "You sure?" } %>
         <% end %>
      <br/>   
      <% end %>

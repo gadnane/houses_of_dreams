@@ -19,5 +19,8 @@ class ApplicationController < ActionController::Base
       redirect_to(root_url) unless current_user.owner?
     end
 
+     def customer_user
+      redirect_to(root_url) unless current_user.customer?
+    end
   
 end

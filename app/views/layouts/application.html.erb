@@ -29,6 +29,13 @@
           <% if current_user.agent?  %>
             <li><%= link_to "Create Account", signup_path %></li>
           <% end %>
+
+
+          <% if current_user.customer?  %>
+          <li><%= link_to "View Visiting List", visit_path(current_visit) %></li>
+          <% end %>
+
+          
           <% end %>
            </li>
             

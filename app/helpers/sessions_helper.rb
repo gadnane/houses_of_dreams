@@ -21,4 +21,20 @@ module SessionsHelper
     user == current_user
   end
 
+
+def set_visit
+@visit = Visit.find(session[:visit_id])
+rescue ActiveRecord::RecordNotFound 
+  @visit = Visit.create 
+  session[:visit_id] = @visit.id
+end
+
+  def current_visit
+    Visit.find(session[:visit_id])
+    rescue ActiveRecord::RecordNotFound
+      visit = Visit.create
+      session[:visit_id] = visit.id
+      visit
+  end
+  
 end

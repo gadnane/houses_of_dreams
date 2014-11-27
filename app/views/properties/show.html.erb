@@ -58,3 +58,9 @@ Picture 4: <%= image_tag @property.picture4.url, class: " imagestore" %>
 <p>
 Picture 5: <%= image_tag @property.picture5.url, class: " imagestore" %>
 </p>
+
+<% if current_user.customer?%>
+<p>
+<%= button_to 'Add to Visiting List', line_items_path(property_id: @property) %>
+</p>
+<% end %>

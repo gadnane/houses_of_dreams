@@ -1,0 +1,13 @@
+
+<h1>Your Visiting List</h1>
+ <ul>
+<% if @visit.line_items.any? %>
+
+<% @visit.line_items.each do |item| %> 
+<li><%= link_to item.property.address, item.property %></li>
+<% end %> </ul>
+
+<% else %>
+
+<p>There are no properties in your visiting list </p>
+<% end %>

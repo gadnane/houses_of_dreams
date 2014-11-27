@@ -2,10 +2,12 @@
 <h1>All Properties</h1>
 <ul>
   <% @properties.each do |property| %>
+  	<% if !property.deactivated %>
     <li>
      
       <%= link_to property.address, property %>
 </li>
+<% end %>
 <% end %>
 </ul>
 
