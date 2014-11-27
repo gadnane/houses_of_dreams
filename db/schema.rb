@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126190059) do
+ActiveRecord::Schema.define(version: 20141126231805) do
 
   create_table "properties", force: true do |t|
     t.string   "property_type"
@@ -22,13 +22,14 @@ ActiveRecord::Schema.define(version: 20141126190059) do
     t.integer  "other"
     t.decimal  "rent"
     t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "picture"
     t.string   "picture2"
     t.string   "picture3"
     t.string   "picture4"
     t.string   "picture5"
+    t.boolean  "deactivated",   default: false
   end
 
   add_index "properties", ["user_id", "created_at"], name: "index_properties_on_user_id_and_created_at"

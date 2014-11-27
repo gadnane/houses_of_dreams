@@ -41,38 +41,60 @@ Type of Account: Customer
 <p>
 <% if current_user.owner? %> 
 <h3>Properties (<%= @user.properties.count %>)</h3>
+<h2>Active Properties</h2>
    <% if @user.properties.any? %>
-      
-     
       <ul >
       <% @user.properties.each do |property| %>
+      <% if !property.deactivated %>
        	<li>
       <%= link_to property.address, property %>, added 
       <%= time_ago_in_words(property.created_at) %> ago. 
       
        | <%= link_to "delete Property", property, method: :delete,
                                   data: { confirm: "You sure?" } %>
-     |<%= link_to 'Update Property', edit_property_path(property) %><br/>   
+     |<%= link_to 'Update Property', edit_property_path(property) %>
+
+ <%= form_for(property) do |f| %>
+     <%= label :deactivated, "To mark property as deleted, check off the box and press deactivate:" %>
+        <%= f.check_box :deactivated %>
+        <%= f.submit "Deactivate Account", class: "btn btn-danger",  data: { confirm: "You sure?" } %>
+        <% end %>
+     <br/>   
+     <% end %>
      <% end %>
 		</li>
-
       </ul>
-      
-      <%= will_paginate @properties %>
-
+    
       <% else %>
-
     <p>
     Sorry, you have no properties
     </p>
-    
-
- <% end %>
+     <% end %>
 <% end %>
-
 </p>
 
+ <p>
+<% if current_user.owner? %> 
+<h2>Deactivated Properties</h2>
+   <% if @user.properties.any? %>
+      <ul >
+      <% @user.properties.each do |property| %>
+       <% if property.deactivated? %>
+        <li>
+      <%= link_to property.address, property %>, added 
+      <%= time_ago_in_words(property.created_at) %> ago. 
+      
+       | <%= link_to "delete Property", property, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+     |<%= link_to 'Update Property', edit_property_path(property) %>
+     <% end %>
+     <% end %>
+    </li>
+      </ul>
 
+     <% end %>
+<% end %>
+</p>
 
  
                       

@@ -5,13 +5,6 @@
     <li>
      
       <%= link_to property.address, property %>
-      <% if logged_in? %>
-       <% if current_user.owner? %>
-    | <%= link_to "delete Property", property, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-     |<%= link_to 'Update Property', edit_property_path(property) %><br/>                    
-  <% end %>
-  <% end %>
 </li>
 <% end %>
 </ul>
