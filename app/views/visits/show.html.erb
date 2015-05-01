@@ -4,10 +4,19 @@
 <% if @visit.line_items.any? %>
 
 <% @visit.line_items.each do |item| %> 
-<li><%= link_to item.property.address, item.property %></li>
+<li>
+<%=link_to (image_tag item.property.picture.url, class: " imagethumb"), item.property %> |
+       <%= link_to "Address: #{item.property.address}", item.property %>|
+     Type:  <%= item.property.property_type %> |
+      Location: <%= item.property.location %> |
+      Bedrooms: <%= item.property.bedroom %> |
+      Bathrooms: <%= item.property.bathroom %>|
+      Other Rooms: <%= item.property.other %> |
+      Rent: <%= item.property.rent %>
+</li>
 <% end %> </ul>
 
 <% else %>
-
 <p>There are no properties in your visiting list </p>
 <% end %>
+

@@ -1,4 +1,6 @@
 <% provide(:title, @user.username) %>
+
+<h1>Account Information</h1>
 <p>
 User Name: <%= @user.username %>
 </p>
@@ -46,7 +48,7 @@ Type of Account: Customer
       <ul >
       <% @user.properties.each do |property| %>
       <% if !property.deactivated %>
-       	<li>
+        <li>
       <%= link_to property.address, property %>, added 
       <%= time_ago_in_words(property.created_at) %> ago. 
       
@@ -62,7 +64,7 @@ Type of Account: Customer
      <br/>   
      <% end %>
      <% end %>
-		</li>
+    </li>
       </ul>
     
       <% else %>

@@ -1,28 +1,15 @@
-== README
+This is a web application that connects landlords with potential tenants.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application was develiped with the sunspot_solr dependency, so make sure you start sunspot when you first start the application using "bundle exec rake sunspot:solr:start"
 
-Things you may want to cover:
+In this application landlords are able to:
 
-* Ruby version
+- Post properties they have for rent, including photos of the properties and descriptions
 
-* System dependencies
+- The system will keep track of all of their properties, even the ones they no longer have available for rent. The user can view all their properties on their "view account" page
 
-* Configuration
+Tenants are able to:
 
-* Database creation
+- View all properties, or filter their search using the search fields. They can filter by location, type of property, number of bedrooms, or rent.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- When logged in, tenants can add properties they are interested in to a visiting list in order to better manage their search. Tenants specify a maximum rent in their profile, so the application will not let them mistakenly add properties to their visiting list that they cannot afford. 

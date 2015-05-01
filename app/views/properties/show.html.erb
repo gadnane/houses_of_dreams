@@ -1,4 +1,9 @@
 <% provide(:title, @property.address) %>
+<h1>Property Information</h1>
+<% if @property.deactivated? %>
+	<h2><u>This property has been deleted</u></h2>
+<% end %>
+
 <p>
 Property Type: <%= @property.property_type %>
 </p>

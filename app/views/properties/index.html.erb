@@ -4,8 +4,14 @@
   <% @properties.each do |property| %>
   	<% if !property.deactivated %>
     <li>
-     
-      <%= link_to property.address, property %>
+     <%=link_to (image_tag property.picture.url, class: " imagethumb"), property %> |
+       <%= link_to "Address: #{property.address}", property %>|
+     Type:  <%= property.property_type %> |
+      Location: <%= property.location %> |
+      Bedrooms: <%= property.bedroom %> |
+      Bathrooms: <%= property.bathroom %>|
+      Other Rooms: <%= property.other %> |
+      Rent: <%= property.rent %>
 </li>
 <% end %>
 <% end %>
