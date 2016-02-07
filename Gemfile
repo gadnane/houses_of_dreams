@@ -32,6 +32,8 @@ gem 'bootstrap-sass',       '3.2.0.0'
 # Use unicorn as the app server
 # gem 'unicorn'
 gem 'bcrypt',               '3.1.7'
+
+gem 'nokogiri', '~> 1.6', '>= 1.6.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'will_paginate',           '3.0.7'

@@ -2,6 +2,9 @@ class PropertiesController < ApplicationController
 	before_action :owner_user, only: [:new, :create, :destroy]
 
 	def index
+# @properties =Property.paginate(page: params[:page])
+
+    
     @search = Property.search do
       fulltext params[:search], :fields => :location
       fulltext params[:search2], :fields => :property_type
@@ -15,6 +18,7 @@ if @search.results.blank?
         flash.now[:danger]="Sorry, there are no matching properties."
       end
     @properties = @search.results
+
 	end
 
 	def show

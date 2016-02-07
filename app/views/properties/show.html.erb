@@ -9,7 +9,7 @@ Property Type: <%= @property.property_type %>
 </p>
 
 <p>
-Address: <%= @property.address %>
+Address: <%= @property.address.html_safe %>
 </p>
 <p>
 Location: <%= @property.location %>
